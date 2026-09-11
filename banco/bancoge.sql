@@ -8,10 +8,6 @@ CREATE TABLE usuarios (
     senha VARCHAR(100) NOT NULL
 );
 
-INSERT INTO usuarios (email, usuario, senha) VALUES
-('admim@gmail.com', 'admin', '12345'),
-('teste@gmail.com', 'teste', 'abc123');
-
 
 CREATE TABLE videos_assistidos (
     id INT AUTO_INCREMENT PRIMARY KEY,
