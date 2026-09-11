@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade – Guia Etec</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --dark-blue: #033A7B;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      overflow-x: hidden;
+    }
+
+    /* CAMADA DE FUNDO DESFOCADA */
+    .fundo-desfocado {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(135deg, #003373, #0A4AA3);
+      filter: blur(8px);
+      z-index: 0;
+    }
+
+    .folha-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .folha-conteudo {
+      width: 100%;
+      max-width: 1100px;
+      background: var(--white);
+      border-radius: 22px;
+      padding: 48px 50px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: auto;
+      max-height: 90vh;
+      animation: fadeIn .35s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .fechar-btn {
+      position: fixed;
+      top: 50px;
+      right: 40px;
+      font-size: 23px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+      border-radius: 12px;
+      padding: 4px 16px;
+      border: none;
+      cursor: pointer;
+      color: #033A7B;
+      font-weight: 700;
+      z-index: 9999;
+      transition: 0.15s;
+    }
+
+    .fechar-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .titulo-pagina {
+      font-family: 'Bowlby One', sans-serif;
+      font-size: 42px;
+      color: #004AAD;
+      text-align: center;
+      margin-bottom: 22px;
+      letter-spacing: 2px;
+      clear: both;
+    }
+
+    .folha-conteudo h2 {
+      color: var(--dark-blue);
+      margin-top: 32px;
+      font-size: 20px;
+    }
+
+    .folha-conteudo p,
+    .folha-conteudo li {
+      font-size: 17px;
+      line-height: 1.7;
+      text-align: justify;
+      margin-bottom: 12px;
+    }
+
+    .folha-conteudo ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .folha-conteudo {
+        padding: 28px 20px;
+      }
+
+      .titulo-pagina {
+        font-size: 28px;
+      }
+
+      .fechar-btn {
+        font-size: 24px;
+        top: 8px;
+      }
+
+      .folha-conteudo p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fundo-desfocado"></div>
+  
+  <section class="folha-container">
+    <div class="folha-conteudo">
+      <button class="fechar-btn" onclick="window.location.href='../inicio.php'">×</button>
+
+      <h1 class="titulo-pagina">Política de Privacidade – Guia Etec</h1>
+
+      <p>
+        O <strong>Guia Etec</strong> valoriza a sua privacidade e está comprometido em proteger os dados pessoais de todos os usuários.
+        Esta Política de Privacidade tem como objetivo esclarecer como as informações são coletadas, utilizadas e protegidas durante o uso da nossa plataforma.
+        Ao acessar ou utilizar o site <strong>Guia Etec</strong>, você concorda com os termos desta Política.
+      </p>
+
+      <h2>1. Introdução</h2>
+      <p>
+        O <strong>Guia Etec</strong> busca oferecer uma experiência de estudo segura, prática e acessível.
+        Recomendamos que leia atentamente esta Política antes de continuar navegando.
+      </p>
+
+      <h2>2. Informações que Coletamos</h2>
+      <p>O Guia Etec poderá coletar informações de duas formas principais:</p>
+      <ul>
+        <li><strong>Informações fornecidas pelo usuário:</strong> nome, e-mail e senha cadastrados, além de dados inseridos em formulários, pesquisas ou simulados.</li>
+        <li><strong>Informações coletadas automaticamente:</strong> endereço IP, tipo de dispositivo, navegador utilizado e tempo de acesso. Também utilizamos cookies para melhorar a navegação e personalizar a experiência.</li>
+      </ul>
+
+      <h2>3. Uso das Informações</h2>
+      <p>As informações coletadas são utilizadas para:</p>
+      <ul>
+        <li>Permitir o funcionamento e personalização dos recursos do site;</li>
+        <li>Melhorar a experiência de navegação e o desempenho da plataforma;</li>
+        <li>Enviar comunicações e notificações relacionadas ao Guia Etec (quando autorizado);</li>
+        <li>Analisar dados de uso e aprimorar continuamente os serviços oferecidos.</li>
+      </ul>
+      <p><strong>O Guia Etec não vende, aluga ou compartilha dados pessoais com terceiros.</strong></p>
+
+      <h2>4. Cookies</h2>
+      <p>
+        Utilizamos cookies para garantir o funcionamento correto das páginas, armazenar preferências de navegação e obter dados de uso para análise interna.
+        O usuário pode desativar os cookies nas configurações do navegador, mas isso pode limitar algumas funcionalidades do site.
+      </p>
+
+      <h2>5. Segurança das Informações</h2>
+      <p>
+        Adotamos medidas técnicas e administrativas para proteger os dados pessoais contra acessos não autorizados,
+        perda ou uso indevido. Entretanto, nenhum sistema é totalmente imune a falhas.
+        Em caso de incidente que comprometa informações, o Guia Etec se compromete a agir com transparência e responsabilidade.
+      </p>
+
+      <h2>6. Compartilhamento de Dados</h2>
+      <p>Os dados pessoais não são compartilhados com terceiros, exceto quando:</p>
+      <ul>
+        <li>Houver obrigação legal ou solicitação judicial;</li>
+        <li>For necessário para o funcionamento técnico do site (como serviços de hospedagem);</li>
+        <li>O usuário autorizar explicitamente o compartilhamento.</li>
+      </ul>
+
+      <h2>7. Links Externos</h2>
+      <p>
+        Nosso site pode conter links para páginas externas, como o curso parceiro <strong>e-TecFácil</strong>.
+        O Guia Etec não se responsabiliza pelas práticas de privacidade desses sites.
+        Recomendamos que o usuário leia suas políticas antes de fornecer qualquer informação.
+      </p>
+
+      <h2>8. Direitos do Usuário</h2>
+      <p>O usuário tem o direito de:</p>
+      <ul>
+        <li>Acessar, corrigir ou excluir seus dados pessoais;</li>
+        <li>Retirar o consentimento para uso de informações;</li>
+        <li>Solicitar esclarecimentos sobre o uso dos dados coletados.</li>
+      </ul>
+      <p>Para exercer esses direitos, entre em contato conosco pelo e-mail oficial informado abaixo.</p>
+
+      <h2>9. Alterações nesta Política</h2>
+      <p>
+        O Guia Etec pode atualizar esta Política de Privacidade a qualquer momento para se adequar a novas leis ou melhorias no site.
+        Alterações relevantes serão informadas aos usuários por meio de aviso na própria plataforma.
+      </p>
+      <p><strong>Última atualização:</strong> outubro de 2025.</p>
+
+      <h2>10. Contato</h2>
+      <p>Em caso de dúvidas, sugestões ou solicitações relacionadas à privacidade e proteção de dados, entre em contato:</p>
+      <p style="text-align:center;">
+        📧 <strong>contato@guiaetec.com.br</strong><br>
+        📍 <strong>Guia Etec – Rio Grande da Serra, SP</strong>
+      </p>
+
+    </div>
+  </section>
+</body>
+
+</html>

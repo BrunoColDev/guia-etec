@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="img/png" href="imgs/icon logo.png">
+  <title>Guia Etec</title>
+
+  <!-- Fontes -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome (para ícones de redes sociais) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- Ícones (Kit FontAwesome - remova se duplicar com o CDN acima) -->
+  <script src="https://kit.fontawesome.com/a2b2e6d0b3.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  :root {
+    --color-primary: #004AAD;
+    --color-secondary: #4A90E2;
+    --color-accent: #FFD700;
+    --color-dark: #1A1A1A;
+    --color-white: #FFFFFF;
+    --color-bg-light: #EAF2FB;
+    --yellow: #FFCC00;
+    --yellow-logo: #f8be35;
+    --dark-blue: #033A7B;
+    --nav-blue: #212B78;
+    --button-blue: #218FD9;
+    --light-blue: #218FD9;
+    --pink: #FF2D55;
+    --white: #FFF;
+    --gelo: #fffafa;
+    --title-font: "Bowlby One", sans-serif;
+    --body-font: "Inter", sans-serif;
+    --button-font: "Poppins", sans-serif;
+    --spacing-unit: 8px;
+    --transition-speed: 0.3s;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-dark);
+    background-color: var(--color-bg-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ----------------------- RESET ----------------------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    font-family: var(--body-font);
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+    border: 12px solid rgba(3, 58, 123, 0.9);
+    padding: 48px 72px;
+  }
+
+  h1,
+  h2,
+  h3,
+  .conteudos-title,
+  .card-title {
+    font-family: var(--title-font);
+    letter-spacing: 4px;
+  }
+
+  p,
+  .descricao,
+  .rodape-bottom,
+  .coluna a {
+    font-family: var(--body-font);
+  }
+
+  .nav-links a,
+  .area-do-aluno,
+  .btn-yellow,
+  .btn-blue,
+  .card-btn {
+    font-family: var(--button-font);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* ----------------------- CONTAINER PRINCIPAL ----------------------- */
+  .pagina {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px;
+    background: var(--gelo);
+    box-shadow: 0px 0px 20px 8px rgba(30, 30, 30, 0.85);
+    overflow: hidden;
+  }
+
+  /* ----------------------- NAVBAR ----------------------- */
+  .navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .navbar {
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    width: 1156px;
+    padding: 10px 40px;
+    border-radius: 40px;
+    gap: 40px;
+  }
+
+  /* ----------------------- NAVBAR FIXA ----------------------- */
+
+  .navbar-fixed {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 980px;
+    padding: 0px 0px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    gap: 30px;
+    height: 70px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+  }
+
+  .navbar-fixed .nav-links a {
+    color: #fff;
+    padding: 8px 12px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar-fixed .nav-links a:hover {
+    color: #FFD700;
+    transform: scale(1.1);
+  }
+
+  .navbar-fixed .area-do-aluno {
+    background: linear-gradient(90deg, #218FD9, #033A7B);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .navbar-fixed .area-do-aluno:hover {
+    background: linear-gradient(90deg, #033A7B, #218FD9);
+    transform: scale(1.05);
+  }
+
+  .logo-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--dark-blue);
+    border-radius: 30px;
+    padding: 3px;
+  }
+
+  .logonav {
+    width: 80px;
+    height: 40px;
+    border-radius: 70px 0 0 70px;
+    border: 1px solid var(--yellow-logo);
+    background-color: var(--yellow-logo);
+    object-fit: contain;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #FFD700;
+    transform: scale(1.1);
+  }
+
+  /* Botão área do aluno */
+  .area-do-aluno {
+    background: linear-gradient(90deg, #218FD9, #033A7B);
+    color: white;
+    padding: 14px 38px;
+    border: none;
+    border-radius: 11px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .area-do-aluno:hover {
+    background: #1b79be;
+    transform: scale(1.05);
+  }
+
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: var(--dark-blue);
+    cursor: pointer;
+  }
+
+  .hamburger {
+    display: block;
+    /* botão aparece */
+  }
+
+  .hero-section {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 4);
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    height: 20%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 50px 10px 50px 50px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: calc(var(--spacing-unit) * 6);
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-content {
+    animation: fadeInLeft 0.8s ease-out;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    letter-spacing: 2px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: calc(var(--spacing-unit) * 4);
+    font-weight: 300;
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 5);
+    border: none;
+    border-radius: calc(var(--spacing-unit) * 4);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    background-color: #FFE44D;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    animation: fadeInRight 0.8s ease-out;
+  }
+
+  .mascot-container {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .decorative-circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .circle-1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    left: -100px;
+  }
+
+  .circle-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    right: 10%;
+  }
+
+  .circle-3 {
+    width: 150px;
+    height: 150px;
+    top: 40%;
+    right: -50px;
+  }
+
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 4);
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: calc(var(--spacing-unit) * 6);
+    color: var(--color-primary);
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+  }
+
+  .about-section {
+    background-color: var(--color-white);
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: calc(var(--spacing-unit) * 8);
+    align-items: center;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    color: #333;
+  }
+
+  .about-text strong {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .about-image {
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 1s ease-out;
+  }
+
+  .purpose-section {
+    background-color: var(--color-bg-light);
+  }
+
+  .purpose-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(var(--spacing-unit) * 4);
+  }
+
+  .purpose-card {
+    background-color: var(--color-white);
+    padding: calc(var(--spacing-unit) * 5);
+    border-radius: calc(var(--spacing-unit) * 2);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-speed);
+    text-align: center;
+  }
+
+  .purpose-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card-icon {
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    display: flex;
+    justify-content: center;
+  }
+
+  .purpose-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    color: var(--color-primary);
+  }
+
+  .purpose-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  .purpose-card ul {
+    list-style: none;
+    text-align: left;
+  }
+
+  .purpose-card ul li {
+    padding: calc(var(--spacing-unit) * 1) 0;
+    color: #555;
+    position: relative;
+    padding-left: calc(var(--spacing-unit) * 3);
+  }
+
+  .purpose-card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .trust-section {
+    background-color: var(--color-white);
+  }
+
+  .trust-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: calc(var(--spacing-unit) * 4);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing-unit) * 2);
+    padding: calc(var(--spacing-unit) * 3);
+    background-color: var(--color-bg-light);
+    border-radius: calc(var(--spacing-unit) * 1.5);
+    transition: all var(--transition-speed);
+  }
+
+  .trust-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .check-icon {
+    flex-shrink: 0;
+  }
+
+  /* ---------------- TEAM ---------------- */
+  .team {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .team h2 {
+    margin-bottom: 40px;
+    font-family: var(--title-font);
+    letter-spacing: 4px;
+    color: var(--dark-blue);
+    text-align: center;
+    width: 100%;
+  }
+
+  .team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .team-card {
+    width: 250px;
+    height: 340px;
+    perspective: 1000px;
+  }
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  .team-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    backface-visibility: hidden;
+    border: 1px solid var(--dark-blue);
+    overflow: hidden;
+  }
+
+  .card-front {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .card-front img {
+    width: 80%;
+    height: 55%;
+    border-radius: 60%;
+    border: 3px solid var(--dark-blue);
+    margin-bottom: 15px;
+    object-fit: cover;
+  }
+
+  .card-front h3 {
+    color: var(--dark-blue);
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .card-front p {
+    color: #444;
+    font-weight: 600;
+  }
+
+  .card-back {
+    background: whitesmoke;
+    color: black;
+    transform: rotateY(180deg);
+    padding: 25px 18px;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  /* ----------------------- RODAPÉ ----------------------- */
+  .logo {
+    width: 80px;
+    height: 40px;
+    border-radius: 70px 0 0 70px;
+    object-fit: contain;
+  }
+
+  .rodape {
+    background-color: #0E2C56;
+    color: #fff;
+    padding: 90px;
+    width: 100%;
+    border-radius: 0 0 40px 40px;
+    letter-spacing: normal;
+    font-weight: normal;
+  }
+
+  .rodape-meio,
+  .rodape-meio * {
+    font-family: Arial, sans-serif !important;
+    letter-spacing: normal !important;
+    font-weight: normal !important;
+  }
+
+  .rodape-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+
+  .social-icons a {
+    margin-right: 15px;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform .2s ease, color .2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.15);
+    color: #FFD23F;
+  }
+
+  .atendimento {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .rodape-meio {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .logo img {
+    height: 250%;
+  }
+
+  .coluna {
+    min-width: 160px;
+  }
+
+  .coluna h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .coluna a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .coluna a:hover {
+    color: #FFCC00;
+  }
+
+  .rodape-bottom {
+    text-align: center;
+    font-size: 12px;
+    border-top: 1px solid #fff;
+    padding-top: 12px;
+    line-height: 1.4;
+  }
+
+  /* ----------------------- ANIMAÇÃO ----------------------- */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ----------------------- RESPONSIVO ----------------------- */
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: var(--dark-blue);
+    cursor: pointer;
+  }
+
+  @media (max-width: 1024px) {
+    .pagina {
+      padding: 24px;
+      max-width: calc(100% - 48px);
+    }
+
+    .container {
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    /* layout em coluna */
+    .container {
+      grid-template-columns: 1fr;
+      padding: 0 12px;
+    }
+
+    .hero-section {
+      padding: 32px 18px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    /* logo totalmente arredondada (todos os cantos) */
+    .logonav,
+    .logo {
+      border-radius: 14px !important;
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    /* mascote maior e centralizado */
+    .mascot-container img,
+    .hero-image .mascot-container img {
+      width: 220px;
+      height: auto;
+      margin: 12px auto;
+      display: block;
+    }
+
+    /* about em coluna e colapso inicial */
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .about-text {
+      transition: max-height .36s ease, padding .28s ease;
+    }
+
+    .about-text.collapsed {
+      max-height: 120px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-text.collapsed::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 48px;
+      background: linear-gradient(transparent, rgba(234, 242, 251, 0.95));
+      pointer-events: none;
+    }
+
+    .about-text.expanded {
+      max-height: none;
+    }
+
+    .ver-mais-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--dark-blue, #033A7B);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+    }
+
+    /* mobile: menu e nav */
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--dark-blue);
+      flex-direction: column;
+      padding: 12px 0;
+      z-index: 1200;
+      border-radius: 0 0 12px 12px;
+    }
+
+    .nav-links.nav-active {
+      display: flex;
+    }
+
+    .hamburger {
+      display: block;
+      color: var(--white);
+      background: transparent;
+      border: 0;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .area-do-aluno {
+      display: none;
+    }
+
+    .rodape {
+      padding: 40px 20px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .mascot-container img {
+      width: 260px;
+    }
+
+    .hero-title {
+      font-size: 1.6rem;
+    }
+
+    .hero-subtitle {
+      font-size: .95rem;
+    }
+
+    .logonav,
+    .logo {
+      width: 56px;
+      height: 56px;
+    }
+
+    .ver-mais-btn {
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+  }
+
+  /* BOTÃO VOLTAR AO TOPO */
+  #btn-topo {
+    position: fixed;
+    right: 5px;
+    bottom: 55px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #FFD237, #D4A014);
+    color: #033A7B;
+    font-size: 28px;
+    font-weight: bold;
+    border: 3px solid #033A7B;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    z-index: 1200;
+    transition: 0.25s ease;
+
+    /* começa invisível */
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+  }
+
+  #btn-topo.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  #btn-topo:hover {
+    transform: scale(1.14);
+    background: linear-gradient(180deg, #FFDF50, #E3B738);
+  }
+
+
+
+
+
+
+
+  /* ====== RESPONSIVIDADE — ATÉ 1024px ====== */
+  @media (max-width: 1024px) {
+
+    body {
+      padding: 20px;
+    }
+
+    .pagina {
+      border-radius: 25px;
+      padding: 0;
+      max-width: 100%;
+    }
+
+    .navbar {
+      width: 100%;
+      padding: 12px 16px;
+      gap: 18px;
+    }
+
+    .container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-section {
+      padding: 40px 6%;
+      text-align: center;
+      align-items: center;
+    }
+
+    .about-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .purpose-cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+
+
+
+  /* ====== RESPONSIVIDADE — ATÉ 768px ====== */
+  @media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+      justify-content: space-between;
+      padding: 8px 14px;
+      border-radius: 18px;
+    }
+
+    .hamburger {
+      display: block;
+      font-size: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: white;
+    }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 72px;
+      left: 12px;
+      right: 12px;
+      background: var(--dark-blue);
+      flex-direction: column;
+      padding: 12px;
+      border-radius: 14px;
+      gap: 8px;
+      z-index: 900;
+    }
+
+    .nav-links.nav-active {
+      display: flex;
+    }
+
+    .area-do-aluno {
+      display: none;
+    }
+
+    /* Hero */
+    .hero-section {
+      padding: 30px 6%;
+      text-align: center;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .container {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+      justify-content: center;
+    }
+
+    .mascot-container img {
+      width: 240px;
+      height: auto;
+    }
+
+    /* Sessões internas */
+    .purpose-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .team-card {
+      width: 220px;
+      height: 300px;
+    }
+
+    /* Rodapé */
+    .rodape {
+      padding: 40px 20px;
+    }
+
+    .rodape-top {
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .rodape-meio {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      text-align: center;
+    }
+
+  }
+
+
+
+  /* ====== RESPONSIVIDADE — ATÉ 480px / 420px ====== */
+  @media (max-width: 480px) {
+
+    .hero-title {
+      font-size: 1.9rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+    }
+
+    .mascot-container img {
+      width: 200px;
+    }
+
+    .team-card {
+      width: 100%;
+      height: auto;
+    }
+
+    .logonav {
+      width: 52px;
+      height: 40px;
+      border-radius: 12px !important;
+    }
+  }
+
+  @media (max-width: 360px) {
+
+    .hero-title {
+      font-size: 1.7rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.9rem;
+    }
+
+    .rodape {
+      padding: 30px 12px;
+    }
+  }
+</style>
+
+<body>
+  <!-- --------------------- V LIBRAS --------------------- -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper></div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+
+  <div class="pagina">
+
+    <!-- --------------------- NAVBAR --------------------- -->
+    <div class="navbar-container">
+      <div class="navbar" id="navbar">
+        <div class="logo-links">
+          <img src="../assets/img/Logo.png" alt="Logo Guia Etec" class="logonav" />
+          <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <div class="nav-links" id="nav-links">
+            <a href="../inicio.php">Início</a>
+            <a href="../pages/Calendario.php">Calendário</a>
+            <a href="../pages/simulado.php">Simulados</a>
+            <a href="../pages/conteudos.php">Conteúdos</a>
+            <a href="../pages/sobre.html">Sobre Nós</a>
+          </div>
+        </div>
+
+        <button class="area-do-aluno" onclick="window.location.href='../backend/login.php'">
+          Área do Aluno
+        </button>
+      </div>
+    </div>
+
+
+    <!-- --------------------- HERO SECTION --------------------- -->
+
+    <main>
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">SOBRE O GUIA ETEC</h1>
+            <p class="hero-subtitle">Uma plataforma feita por alunos, para alunos. Tudo o que você precisa pra mandar
+              bem no Vestibulinho e planejar seu futuro profissional.</p>
+            <button class="btn-primary">Conheça Mais</button>
+          </div>
+          <div class="hero-image">
+            <div class="mascot-container">
+              <img src="../assets/img/Img Bem Vindo.png" alt="Corujinha Guia Etec" />
+            </div>
+          </div>
+        </div>
+        <div class="decorative-circles">
+          <div class="circle circle-1"></div>
+          <div class="circle circle-2"></div>
+          <div class="circle circle-3"></div>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <div class="content-container">
+          <h2 class="section-title">Quem Somos?</h2>
+          <div class="about-content">
+            <div class="about-text">
+              <p>Somos um grupo de estudantes que entende as dificuldades de quem está se preparando para a ETEC.</p>
+              <p>Por isso, criamos o <strong>Guia Etec</strong>: uma plataforma feita para facilitar sua jornada, com
+                simulados, conteúdos, planos de estudo e ferramentas úteis — tudo de forma organizada e acessível.</p>
+              <p>Nosso objetivo é ajudar você a conquistar sua vaga, estudando com mais foco, praticidade e confiança.
+              </p>
+            </div>
+            <div class="about-image">
+              <svg width="300" height="250" viewBox="0 0 300 250" fill="none">
+                <rect x="50" y="80" width="200" height="140" rx="10" fill="#EAF2FB" />
+                <rect x="70" y="50" width="70" height="90" rx="5" fill="#4A90E2" />
+                <rect x="160" y="50" width="70" height="90" rx="5" fill="#FFD700" />
+                <circle cx="105" cy="30" r="15" fill="#1A1A1A" />
+                <circle cx="195" cy="30" r="15" fill="#1A1A1A" />
+                <path d="M80 100L130 120L80 140" fill="#FFFFFF" />
+                <rect x="170" y="100" width="50" height="5" rx="2.5" fill="#004AAD" />
+                <rect x="170" y="115" width="40" height="5" rx="2.5" fill="#004AAD" />
+                <rect x="170" y="130" width="45" height="5" rx="2.5" fill="#004AAD" />
+                <circle cx="100" cy="180" r="8" fill="#FFD700" />
+                <circle cx="150" cy="180" r="8" fill="#FFD700" />
+                <circle cx="200" cy="180" r="8" fill="#FFD700" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="purpose-section">
+        <div class="content-container">
+          <h2 class="section-title">Nosso Propósito</h2>
+          <div class="purpose-cards">
+            <div class="purpose-card">
+              <div class="card-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="20" fill="#004AAD" opacity="0.1" />
+                  <path d="M24 8L28 20H40L30 28L34 40L24 32L14 40L18 28L8 20H20L24 8Z" fill="#004AAD" />
+                </svg>
+              </div>
+              <h3>Missão</h3>
+              <p>Ajudar estudantes a entrarem na ETEC com conteúdo de qualidade e fácil de acessar.</p>
+            </div>
+            <div class="purpose-card">
+              <div class="card-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="20" fill="#FFD700" opacity="0.2" />
+                  <path d="M24 8C24 8 32 12 32 20C32 24 29 28 24 32C19 28 16 24 16 20C16 12 24 8 24 8Z"
+                    fill="#FFD700" />
+                  <circle cx="24" cy="20" r="4" fill="white" />
+                </svg>
+              </div>
+              <h3>Visão</h3>
+              <p>Ser a principal plataforma online de apoio para quem quer passar no Vestibulinho da ETEC.</p>
+            </div>
+            <div class="purpose-card">
+              <div class="card-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="20" fill="#4A90E2" opacity="0.2" />
+                  <circle cx="24" cy="20" r="8" fill="#4A90E2" />
+                  <path d="M12 38C12 32 17 28 24 28C31 28 36 32 36 38" fill="#4A90E2" />
+                </svg>
+              </div>
+              <h3>Valores</h3>
+              <ul>
+                <li>Inovação na forma de aprender</li>
+                <li>Educação acessível para todos</li>
+                <li>Empatia com os desafios dos estudantes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-section">
+        <div class="content-container">
+          <h2 class="section-title">Por Que Somos Confiáveis?</h2>
+          <div class="trust-items">
+            <div class="trust-item">
+              <svg class="check-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="14" fill="#FFD700" />
+                <path d="M10 16L14 20L22 12" stroke="white" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <p>Somos estudantes como você — entendemos na prática o que funciona.</p>
+            </div>
+            <div class="trust-item">
+              <svg class="check-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="14" fill="#FFD700" />
+                <path d="M10 16L14 20L22 12" stroke="white" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <p>Conteúdo baseado em provas reais.</p>
+            </div>
+            <div class="trust-item">
+              <svg class="check-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="14" fill="#FFD700" />
+                <path d="M10 16L14 20L22 12" stroke="white" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <p>Tudo feito com cuidado e organização.</p>
+            </div>
+            <div class="trust-item">
+              <svg class="check-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="14" fill="#FFD700" />
+                <path d="M10 16L14 20L22 12" stroke="white" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <p>Sem promessas falsas — apoio real e gratuito.</p>
+            </div>
+            <div class="trust-item">
+              <svg class="check-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="14" fill="#FFD700" />
+                <path d="M10 16L14 20L22 12" stroke="white" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <p>Transparência e compromisso com o feedback dos alunos.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EQUIPE -->
+      <section class="team fade-in">
+        <h2>Conheça Nossa Equipe</h2>
+        <div class="team-container">
+          <div class="team-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="../assets/img/Fotos Integrantes/Bruno.png" alt="Bruno de Barros">
+                <h3>Bruno de Barros</h3>
+                <p>Dev & DBA</p>
+              </div>
+              <div class="card-back">
+                <p><strong>Bruno de Barros Faria Colangelo</strong><br>
+                  Contribuiu ativamente no desenvolvimento do projeto, participando da criação das ideias iniciais e da
+                  administração geral. Atuou na elaboração da documentação e foi o principal responsável pela
+                  programação
+                  da plataforma.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="../assets/img/Fotos Integrantes/Isaac.png" alt="Isaac Calixto">
+                <h3>Isaac Calixto</h3>
+                <p>Dev & UX/UI</p>
+              </div>
+              <div class="card-back">
+                <p><strong>Isaac Calixto Ferreira</strong><br>
+                  Responsável pela idealização e direção do projeto, coordenando o grupo durante todo o processo de
+                  desenvolvimento. Além disso, foi responsável pelo design visual e também colaborou na parte de
+                  programação da plataforma.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="../assets/img/Fotos Integrantes/Rogerio.png" alt="Rogerio Julio">
+                <h3>Rogerio Julio</h3>
+                <p>Desenvolvedor Back-End</p>
+              </div>
+              <div class="card-back">
+                <p><strong>Rogério dos Santos Evangelista Júlio</strong><br>
+                  Desempenhou um papel importante na produção da documentação, contribuindo com ideias relevantes para o
+                  aprimoramento do projeto e auxiliando nas estratégias de marketing.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="../assets/img/Fotos Integrantes/Yuri.png" alt="Yuri Dias">
+                <h3>Yuri Dias</h3>
+                <p>Doc Analyst</p>
+              </div>
+              <div class="card-back">
+                <p><strong>Yuri Rodrigues Dias</strong><br>
+                  Atuou na elaboração da documentação e colaborou nas discussões de ideias e nas ações voltadas ao
+                  marketing e divulgação do projeto.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- --------------------- RODAPÉ --------------------- -->
+      <section class="rodape">
+        <div class="rodape-top">
+          <div class="social-icons">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/guiaetec/" target="_blank" rel="noopener noreferrer"
+              aria-label="Instagram Guia Etec">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/profile.php?id=61584199692540" target="_blank" rel="noopener noreferrer"
+              aria-label="Facebook Guia Etec">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
+
+          <div class="atendimento">
+            Central de Atendimento: <strong>XXXXX-XXXX</strong>
+          </div>
+        </div>
+
+        <div class="rodape-meio">
+          <div class="logo">
+            <img src="../assets/img/Logo off-white.png" alt="Logo Guia Etec">
+          </div>
+
+          <div class="coluna">
+            <h3>Ajuda</h3>
+            <a href="#">Entre em Contato</a>
+          </div>
+
+          <div class="coluna">
+            <h3>Guia</h3>
+            <a href="#">Crie sua Conta</a>
+            <a href="sobre.html">Sobre Nós</a>
+          </div>
+
+          <div class="coluna">
+            <h3>Termos</h3>
+            <a href="politica.html">Termos e condições</a>
+            <a href="politica.html">Política de Privacidade</a>
+          </div>
+        </div>
+
+        <div class="rodape-bottom">
+          Guia Etec - S.P - CNPJ: 10.760.260 / Av. Vereador Francisco Moraes Ramos, 777 - Jardim Novo Horizonte |
+          Bairro CSU, Rio Grande da Serra - SP CEP: 09450-000
+        </div>
+      </section>
+
+    </main> <!-- fecha main -->
+
+  </div> <!-- .pagina -->
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    const navbar = document.getElementById("navbar");
+    const navLinks = document.getElementById("nav-links");
+    const hamburger = document.getElementById("hamburger");
+
+    if (navbar) {
+      window.addEventListener("scroll", () => {
+        navbar.classList.toggle("navbar-fixed", window.scrollY > 50);
+      });
+    }
+
+    if (hamburger && navLinks) {
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("nav-active");
+      });
+    }
+  </script>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-topo" title="Voltar ao topo">↑</button>
+
+  <script>
+    (function () {
+      const btnTopo = document.getElementById("btn-topo");
+      const navbarContainer = document.querySelector(".navbar-container");
+      const navbarEl = document.getElementById("navbar"); // o elemento que recebe a classe no seu outro script
+
+      if (!btnTopo) return;
+
+      // Mostrar/esconder botão sincronizado com a navbar fixa
+      window.addEventListener("scroll", () => {
+        const fixed = (navbarContainer && navbarContainer.classList.contains("navbar-fixed")) ||
+          (navbarEl && navbarEl.classList.contains("navbar-fixed"));
+        if (fixed) btnTopo.classList.add("show");
+        else btnTopo.classList.remove("show");
+      });
+
+      // Ação: voltar para o topo
+      btnTopo.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    })();
+  </script>
+</body>
+
+</html>
