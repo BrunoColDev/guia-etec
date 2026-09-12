@@ -1538,6 +1538,45 @@ session_start();
         max-width: 380px;
       }
     }
+
+    /* ===== AJUSTES MOBILE ===== */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+
+    .sobre-projeto {
+        width: 100%;
+        padding: 40px 16px;
+    }
+
+    .container-sobre,
+    .conteudo-sobre,
+    .texto-sobre {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .descricao {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px;
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    .texto-sobre h2 {
+        font-size: 32px;
+        letter-spacing: 1.5px;
+        text-align: center;
+    }
+}
   </style>
 </head>
 
