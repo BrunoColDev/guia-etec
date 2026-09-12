@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt->rowCount() > 0) {
         $usuario_db = $stmt->fetch();
 
-        if ($senha === $usuario_db['senha']) {
+        if (password_verify($senha, $usuario_db['senha'])) {
 
             // SESSÃO AGORA FUNCIONA SEM ERRO
             $_SESSION['id']      = $usuario_db['id'];
